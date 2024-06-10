@@ -10,11 +10,10 @@ class FinderType(Enum):
 
 class PlaceFinderFactory:
     @staticmethod
-    def create(finder_type: FinderType, timeout: int = None) -> Union[PlaceFinder, None]:
-        print(finder_type)
+    def create(finder_type: FinderType, loading_wait: int = None, changeframe_wait: int = None) -> Union[PlaceFinder, None]:
         if finder_type == FinderType.INTERIOR:
-            return InteriorFinder(timeout)
+            return InteriorFinder(loading_wait, changeframe_wait)
         elif finder_type == FinderType.TEAM:
-            return TeamFinder(timeout)
+            return TeamFinder(loading_wait, changeframe_wait)
         else:
             return None
