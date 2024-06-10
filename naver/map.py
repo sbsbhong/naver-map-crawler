@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from webdriver_manager.chrome import ChromeDriverManager
 
-from crawler.place import Place
+from naver.place import Place
 
 options = webdriver.ChromeOptions()
 options.add_argument('headless')

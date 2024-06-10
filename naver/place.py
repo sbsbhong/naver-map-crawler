@@ -53,14 +53,14 @@ class Place(__PlaceAttribute):
         
         self.address = self.__get_text_from_elem(top_elem, By.CLASS_NAME, "LDgIH")
         self.contact_number = self.__get_text_from_elem(top_elem, By.CLASS_NAME, "xlx7Q")
-        self.job_category = self.__get_text_from_elem(top_elem, By.CLASS_NAME, "DJJvD")
+        self.job_category = self.__get_text_from_elem(top_elem, By.CLASS_NAME, "lnJFt")
         self.name = self.__get_text_from_elem(top_elem, By.CLASS_NAME, "GHAhO")
         self.review_cnt = self.__get_text_from_elem(top_elem, By.CLASS_NAME, "place_section_count", 0)
 
         try:
             workingtime_div = top_elem.find_element(By.CLASS_NAME, "U7pYf")
             if workingtime_div:
-                self.working_time = self.__get_text_from_elem(workingtime_div, By.TAG_NAME, "span")
+                self.working_time = self.__get_text_from_elem(workingtime_div, By.TAG_NAME, "time")
         except:
             pass
 

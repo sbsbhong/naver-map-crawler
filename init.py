@@ -1,13 +1,19 @@
-from team import TeamFinder
+from finder import PlaceFinderFactory, FinderType
 
-teams = TeamFinder.find_teams('강원도 횡성군')
+finder = PlaceFinderFactory.create(FinderType.INTERIOR)
 
-for team in teams:
-    print(team.name)
-    print(team.address)
-    print(team.contact_number)
-    print(team.job_category)
-    print(team.working_time)
-    print(team.review_cnt)
-    print(team.rate_score)
+if not finder:
+    print('Invalid finder type')
+    exit()
+
+places = finder.find('경기도 수원시')
+
+for place in places:
+    print(place.name)
+    print(place.address)
+    print(place.contact_number)
+    print(place.job_category)
+    print(place.working_time)
+    print(place.review_cnt)
+    print(place.rate_score)
     print()

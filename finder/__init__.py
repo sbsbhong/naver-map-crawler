@@ -1,0 +1,1 @@
+from finder.factory import PlaceFinderFactory, FinderType
